@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MapShare Upload</title>
+</head>
+
+<body>
+    <center>
+        <!-- HTML5 Input Form Elements -->
+        <input id="fileupload" type="file" name="fileupload" /> 
+        <button id="upload-button" onclick="uploadFile()"> Upload </button>
+
+        <!-- Ajax JavaScript File Upload Logic -->
+        <script>
+        async function uploadFile() {
+        let formData = new FormData(); 
+        formData.append("file", fileupload.files[0]);
+        await fetch('/upload.php', {
+            method: "POST", 
+            body: formData
+        }); 
+        alert('The file has been uploaded successfully.');
+        }
+        </script>
+    </center>
+</body>
+</html>

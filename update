@@ -1,0 +1,7 @@
+#!/bin/bash
+python3 update.py
+
+ls data/gpx_files > data/gpx_list
+ls data/images/located/ > data/loc_img_list
+ls data/images/unlocated/ > data/unloc_img_list
+ls data/images/untimed/ > data/untimed_img_list
