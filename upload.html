@@ -5,24 +5,92 @@
     <title>MapShare Upload</title>
 </head>
 
-<body>
-    <center>
-        <!-- HTML5 Input Form Elements -->
-        <input id="fileupload" type="file" name="fileupload" /> 
-        <button id="upload-button" onclick="uploadFile()"> Upload </button>
+<style>
+    .uploadbox {
+        width: 350px;
+        padding: 5px;
+        border: black;
+        border-radius: 5px;
+        background-color: green;
+    }
+    
+    .gpx {
+        background-color: green; 
+    }
 
-        <!-- Ajax JavaScript File Upload Logic -->
-        <script>
-        async function uploadFile() {
-        let formData = new FormData(); 
-        formData.append("file", fileupload.files[0]);
-        await fetch('/upload.php', {
-            method: "POST", 
-            body: formData
-        }); 
-        alert('The file has been uploaded successfully.');
-        }
-        </script>
+    .description {
+        background-color: yellow;
+    }
+    .images {
+        background-color: blue;
+    }
+</style>
+
+<body style="background-color:purple;">
+    <center>
+        <h1 style="color:white;">Upload your Day</h1>
+        <br>
+        <br>
+        <br>
+        <div class="uploadbox gpx">
+            <h2>GPX file</h2>
+            <!-- HTML5 Input Form Elements -->
+            <input id="fileupload" type="file" name="fileupload" /> 
+            <button id="upload-button" onclick="uploadFile()"> Upload </button>
+
+            <!-- Ajax JavaScript File Upload Logic -->
+            <script>
+            async function uploadFile() {
+            let formData = new FormData(); 
+            formData.append("file", fileupload.files[0]);
+            await fetch('/upload.php', {
+                method: "POST", 
+                body: formData
+            }); 
+            alert('The file has been uploaded successfully.');
+            }
+            </script>
+        </div>
+        <br>
+        <div class="uploadbox description">
+            <h2>Description</h2>
+            <!-- HTML5 Input Form Elements -->
+            <input id="fileupload" type="file" name="fileupload" /> 
+            <button id="upload-button" onclick="uploadFile()"> Upload </button>
+
+            <!-- Ajax JavaScript File Upload Logic -->
+            <script>
+            async function uploadFile() {
+            let formData = new FormData(); 
+            formData.append("file", fileupload.files[0]);
+            await fetch('/upload.php', {
+                method: "POST", 
+                body: formData
+            }); 
+            alert('The file has been uploaded successfully.');
+            }
+            </script>
+        </div>
+        <br>
+        <div class="uploadbox images">
+            <h2>Images</h2>
+            <!-- HTML5 Input Form Elements -->
+            <input id="fileupload" type="file" name="fileupload" accept="image/png, image/jpeg" multiple/> 
+            <button id="upload-button" onclick="uploadFile()"> Upload </button>
+
+            <!-- Ajax JavaScript File Upload Logic -->
+            <script>
+            async function uploadFile() {
+            let formData = new FormData(); 
+            formData.append("file", fileupload.files[0]);
+            await fetch('/upload.php', {
+                method: "POST", 
+                body: formData
+            }); 
+            alert('The file has been uploaded successfully.');
+            }
+            </script>
+        </div>
     </center>
 </body>
 </html>
