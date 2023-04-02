@@ -35,19 +35,19 @@
         <div class="uploadbox gpx">
             <h2>GPX file</h2>
             <!-- HTML5 Input Form Elements -->
-            <input id="fileupload" type="file" name="fileupload" /> 
+            <input id="gpx_upload" type="file" name="gpx_upload" /> 
             <button id="upload-button" onclick="uploadFile()"> Upload </button>
 
             <!-- Ajax JavaScript File Upload Logic -->
             <script>
             async function uploadFile() {
-            let formData = new FormData(); 
-            formData.append("file", fileupload.files[0]);
-            await fetch('/upload.php', {
-                method: "POST", 
-                body: formData
-            }); 
-            alert('The file has been uploaded successfully.');
+                let formData = new FormData(); 
+                formData.append("file", gpx_upload.files[0]);
+                await fetch('/upload.php', {
+                    method: "POST", 
+                    body: formData
+                }); 
+                alert('The file has been uploaded successfully.');
             }
             </script>
         </div>
@@ -55,7 +55,7 @@
         <div class="uploadbox description">
             <h2>Description</h2>
             <!-- HTML5 Input Form Elements -->
-            <input id="fileupload" type="file" name="fileupload" /> 
+            <input id="desc_upload" type="file" name="fileupload" /> 
             <button id="upload-button" onclick="uploadFile()"> Upload </button>
 
             <!-- Ajax JavaScript File Upload Logic -->
@@ -75,7 +75,7 @@
         <div class="uploadbox images">
             <h2>Images</h2>
             <!-- HTML5 Input Form Elements -->
-            <input id="fileupload" type="file" name="fileupload" accept="image/png, image/jpeg" multiple/> 
+            <input id="img_upload" type="file" name="fileupload" accept="image/png, image/jpeg" multiple/> 
             <button id="upload-button" onclick="uploadFile()"> Upload </button>
 
             <!-- Ajax JavaScript File Upload Logic -->
