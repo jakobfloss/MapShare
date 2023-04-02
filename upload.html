@@ -36,11 +36,11 @@
             <h2>GPX file</h2>
             <!-- HTML5 Input Form Elements -->
             <input id="gpx_upload" type="file" name="gpx_upload" /> 
-            <button id="upload-button" onclick="uploadFile()"> Upload </button>
+            <button id="upload-button" onclick="uploadGPX()"> Upload </button>
 
             <!-- Ajax JavaScript File Upload Logic -->
             <script>
-            async function uploadFile() {
+            async function uploadGPX() {
                 let formData = new FormData(); 
                 formData.append("file", gpx_upload.files[0]);
                 await fetch('/upload.php', {
@@ -56,14 +56,14 @@
             <h2>Description</h2>
             <!-- HTML5 Input Form Elements -->
             <input id="desc_upload" type="file" name="desc_upload" /> 
-            <button id="upload-button" onclick="uploadFile()"> Upload </button>
+            <button id="upload-button" onclick="uploadDesc()"> Upload </button>
 
             <!-- Ajax JavaScript File Upload Logic -->
             <script>
-            async function uploadFile() {
+            async function uploadDesc() {
             let formData = new FormData(); 
             formData.append("file", desc_upload.files[0]);
-            await fetch('/upload.php', {
+            await fetch('/upload/upload.php', {
                 method: "POST", 
                 body: formData
             }); 
@@ -76,11 +76,11 @@
             <h2>Images</h2>
             <!-- HTML5 Input Form Elements -->
             <input id="img_upload" type="file" name="img_upload" accept="image/png, image/jpeg" multiple/> 
-            <button id="upload-button" onclick="uploadFile()"> Upload </button>
+            <button id="upload-button" onclick="uploadImg()"> Upload </button>
 
             <!-- Ajax JavaScript File Upload Logic -->
             <script>
-            async function uploadFile() {
+            async function uploadImg() {
             let formData = new FormData(); 
             formData.append("file", img_upload.files[0]);
             await fetch('/upload.php', {
