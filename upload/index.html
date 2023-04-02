@@ -55,14 +55,14 @@
         <div class="uploadbox description">
             <h2>Description</h2>
             <!-- HTML5 Input Form Elements -->
-            <input id="desc_upload" type="file" name="fileupload" /> 
+            <input id="desc_upload" type="file" name="desc_upload" /> 
             <button id="upload-button" onclick="uploadFile()"> Upload </button>
 
             <!-- Ajax JavaScript File Upload Logic -->
             <script>
             async function uploadFile() {
             let formData = new FormData(); 
-            formData.append("file", fileupload.files[0]);
+            formData.append("file", desc_upload.files[0]);
             await fetch('/upload.php', {
                 method: "POST", 
                 body: formData
@@ -75,14 +75,14 @@
         <div class="uploadbox images">
             <h2>Images</h2>
             <!-- HTML5 Input Form Elements -->
-            <input id="img_upload" type="file" name="fileupload" accept="image/png, image/jpeg" multiple/> 
+            <input id="img_upload" type="file" name="img_upload" accept="image/png, image/jpeg" multiple/> 
             <button id="upload-button" onclick="uploadFile()"> Upload </button>
 
             <!-- Ajax JavaScript File Upload Logic -->
             <script>
             async function uploadFile() {
             let formData = new FormData(); 
-            formData.append("file", fileupload.files[0]);
+            formData.append("file", img_upload.files[0]);
             await fetch('/upload.php', {
                 method: "POST", 
                 body: formData
